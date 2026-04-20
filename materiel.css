@@ -1,0 +1,15 @@
+.filtre {
+  padding: 6px 14px;
+  border: 1.5px solid #b7ce66;
+  background: white;
+  color: #b7ce66;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.filtre:hover {
+  background-color: #c8d6a2;
+}

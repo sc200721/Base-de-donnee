@@ -89,7 +89,7 @@ function nav($categorie){
         <?php nav($categorie); ?>
     </nav>
 
-    <section>Page d'accueil 555 </section>
+    <section>Page d'accueil</section>
 
     <footer>
       Footer<br />

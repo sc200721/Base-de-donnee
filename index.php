@@ -43,7 +43,7 @@ function nav($categorie){
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML + CSS</title>
+    <title>MonCoinVert</title>
     <script src="indexRecherche.js"></script>
     <link rel="stylesheet" href="index.css" />
   </head>
@@ -89,7 +89,7 @@ function nav($categorie){
         <?php nav($categorie); ?>
     </nav>
 
-    <section>Page d'accueil</section>
+    <section>Page d'accueil 555 </section>
 
     <footer>
       Footer<br />

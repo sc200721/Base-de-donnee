@@ -15,26 +15,22 @@ $categorie=[
 ];
  
 
-
 /*génère le nav en fonction de la page sur laquel on est pour mettre en évidence le bouton*/
-function nav(){
-    echo "<ul>"
-
-    foreach ($categorie as $categorie => $sousCategories){
+function nav($categorie){
+    echo "<ul>";
+    foreach ($categorie as $row => $sousCategories){
         echo "<li class='menu-deroulant'>";
-        echo "<a href='#'>$categorie</a>";
-
+        $tmp=htmlspecialchars($row);
+        echo "<a href='#'>$tmp</a>";
         if (!empty($sousCategories)) {
             echo "<ul class='sous-menu'>";
-
             foreach ($sousCategories as $sousCat) {
-                echo "<li><a href='#'>$sousCat</a></li>";
+                $tmp=htmlspecialchars($sousCat);
+                echo "<li><a href='#'>$tmp</a></li>";
               }
-        
               echo "</ul>";
         }
         echo "</li>";
-
     }
     echo "</ul>";
 }
@@ -90,7 +86,7 @@ function nav(){
     </header>
 
     <nav>
-        <?php nav($categories); ?>
+        <?php nav($categorie); ?>
     </nav>
 
     <section>Page d'accueil 555 </section>

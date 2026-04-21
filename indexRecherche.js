@@ -50,4 +50,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, 300); // attend 300ms
   });
-}); 
+});

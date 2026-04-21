@@ -1,13 +1,13 @@
 <?php
 try {
-    $pdo = new PDO("mysql:host=sql7823598;dbname=sql7823598;charset=utf8", "sql7823598", "89PVb8Vr8E");
+    $pdo = new PDO("mysql:host=localhost;dbname=ta_base;charset=utf8", "root", "");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (Exception $e) {
     die("Erreur de connexion");
 }
 
-if (isset($_GET['recherche'])) {
-    $q = $_GET['recherche'];
+if (isset($_GET['q'])) {
+    $q = $_GET['q'];
 
     $stmt = $pdo->prepare("SELECT nom FROM produits WHERE nom LIKE :search LIMIT 10");
     $stmt->execute([
@@ -16,7 +16,7 @@ if (isset($_GET['recherche'])) {
 
     $resultats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $data = [ ];
+    $data = [];
 
     foreach ($resultats as $row) {
         $data[] = $row['nom'];

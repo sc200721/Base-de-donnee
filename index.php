@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Mon coin vert</title>
   <link rel="stylesheet" href="index.css">
+  <script src="indexRecherche.js"></script>
 </head>
 <body>
 

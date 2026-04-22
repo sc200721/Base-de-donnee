@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
         //on transforme la réponse du php en json
         .then((response) => response.json())
         .then((data) => {
-          console.log("DATA:", data);
           suggestions.innerHTML = "";
 
           // Pour chaque résultat obtenu

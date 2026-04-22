@@ -1,66 +1,59 @@
+<?php
+require_once '../function.php';
+
+try {
+    $pdo = new PDO("mysql:host=localhost;dbname=moncoinvert.sql;charset=utf8", "root", "");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (Exception $e) {
+    die("Erreur de connexion à la base de données.");
+}
+
+// On récupère les produits liés à cette catégorie
+$stmt = $pdo->prepare("SELECT * FROM produits WHERE categorie = :cat");
+$stmt->execute(['cat' => "Plante d'intérieur"]);
+$produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML + CSS</title>
-    <script src="indexRecherche.js"></script>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <header>
-      <div id="grandconteneur">
-        <a href="index.html">
-          <img
-            class="logo"
-            src="logo a faire etc..."
-            alt="Logo de l'Entreprise"
-          />
-        </a>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plante d'intérieur</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="categorie.css">
+    <script src="../indexRecherche.js"></script>
+</head>
+<body>
+    <!-- On inclut l'en-tête existant -->
+    <?php include '../header.html'; ?>
 
-        <div class="containerhead">
-          <form class="form_de_recherche">
-            <input type="text" name="recherche" placeholder="Recherche" />
-            <button class="resultat">
-              <img src="loupe.png" alt="Loupe" />
-            </button>
-            <!-- faudra faire un melange de php + base de donnée pour la barre de
-            recher en autocompletation ou sinon faire un script en js à voir -->
-          </form>
+    <!-- On génère le menu de navigation -->
+    <?php nav($categories); ?>
+
+    <section>
+        <h2>Plantes d'intérieur</h2>
+        <p>Découvrez notre sélection pour verdir votre intérieur.</p>
+        
+        <div class="grille-produits">
+            <?php if (empty($produits)): ?>
+                <p>Aucun produit disponible dans cette catégorie pour le moment.</p>
+            <?php else: ?>
+                <?php foreach ($produits as $produit): ?>
+                    <div class="produit">
+                        <div class="img-placeholder">Image <?= htmlspecialchars($produit['nom'] ?? 'Produit') ?></div>
+                        <h3><?= htmlspecialchars($produit['nom']) ?></h3>
+                        <p class="prix"><?= htmlspecialchars($produit['prix'] ?? '0.00') ?> €</p>
+                        <button class="btn-decouvrir">Ajouter au panier</button>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
-        <div class="utilisateur">
-          <a href="compte.html" class="compte">
-            <img src="" alt="image pour compte" />
-          </a>
-          <a href="panier.html" class="panier">Panier</a>
-        </div>
-      </div>
-    </header>
+    </section>
 
-    <nav>
-      <ul>
-        <li class="menu-deroulant courante">
-          <a href="./plante.html">Plante d'intérieur </a>
-          <ul class="sous-menu">
-            <li><a href="#">Cactus & Succulentes</a></li>
-            <li><a href="#">Plantes retombantes</a></li>
-            <li><a href="#">Plantes XXL</a></li>
-            <li><a href="#">Plantes "Animaux compatible"</a></li>
-            <li><a href="#">Pour débutants</a></li>
-          </ul>
-        </li>
-        <li><a href="./balcon.html">Balcon, Terrasse et Jardin</a></li>
-        <li><a>Coin Potager</a></li>
-        <li><a href="./materiel.html">Matériel & Entretien</a></li>
-        <li><a>Nos conseils & Aide</a></li>
-      </ul>
-    </nav>
-
-    <section>Plantes d'intérieur...</section>
     <footer>
-      Footer<br />
-      tout ce qui est "faux crédit" a rajouter machin machin
+        <div class="footer-bas">
+           &copy; 2026 MonCoinVert. Tous droits réservés. (Projet Universitaire)
+        </div>
     </footer>
-  </body>
+</body>
 </html>

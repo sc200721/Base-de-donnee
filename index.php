@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Mon coin vert</title>
-  <link rel="stylesheet" href="compte.css">
   <link rel="stylesheet" href="index.css">
-  <script src="indexRecherche.js"></script>
 </head>
 <body>
 
@@ -14,9 +12,6 @@ include("function.php");
 
 $page = $_GET['page'] ?? 'accueil';
 $connecte = isset($_COOKIE['client_id']);
-
-
-
 
 switch ($page) {
     case 'accueil':

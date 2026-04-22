@@ -13,7 +13,7 @@ require_once '../function.php';
 </head>
 <body>
     <?php include '../header.html'; ?>
-    <?php nav($categories); ?>
+    <?php nav($categories,$pageCategories); ?>
 
     <section>
         <h2>Nos conseils & Aide</h2>

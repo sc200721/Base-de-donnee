@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //on envoie vers le php
       // par exemple si on tape pla on aura -> search.php?q=pla
       //on rajoute encodeURIComponent pour eviter les erreurs accents/espaces etc
-      fetch("indexrecherche.php?q=" + encodeURIComponent(query))
+      fetch("Base-de-donnee-master/indexrecherche.php?q=" + encodeURIComponent(query))
         //on transforme la réponse du php en json
         .then((response) => response.json())
         .then((data) => {

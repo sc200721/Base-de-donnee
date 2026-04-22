@@ -3,42 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>Mon coin vert</title>
-  <link rel="stylesheet" href="compte.css">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="style/compte.css">
+  <link rel="stylesheet" href="style/index.css">
+  <script src="indexRecherche.js"></script>
 </head>
 <body>
 
-<?php include("header.html"); ?>
+<?php include("header.php");
+include("function.php");
 
-<?php
 $page = $_GET['page'] ?? 'accueil';
 $connecte = isset($_COOKIE['client_id']);
 
 switch ($page) {
     case 'accueil':
     default:
-        include("accueil.html");
+        nav();
+        include("html/accueil.html");
         break;
 
     case 'inscription':
-        include("inscription.html");
+        include("html/inscription.html");
         break;
 
-   case 'connexion':
+    case 'connexion':
         if ($connecte) {
-            include("compte.html");
+            include("compte.php");
         } else {
-            include("connexion.html");
+            include("html/connexion.html");
         }
         break;
 
     case 'panier':
-        include("panier.html");
+        include("html/panier.html");
         break;
+        
 }
-?>
 
-<?php include("footer.html"); ?>
+include("html/footer.html"); ?>
 
 </body>
 </html>

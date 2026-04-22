@@ -1,10 +1,5 @@
 <?php
-$pdo = new PDO(
-    "mysql:host=sql208.infinityfree.com;dbname=if0_41693683_moncoinvert;charset=utf8",
-    "if0_41693683",
-    "mi6fyKP9VKkR0",
-    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-);
+$pdo = new PDO("mysql:host=localhost;dbname=moncoinvert;charset=utf8", "root", "");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = trim($_POST['Nom'] ?? '');

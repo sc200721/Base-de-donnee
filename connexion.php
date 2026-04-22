@@ -1,9 +1,5 @@
 <?php
-$pdo = new PDO(
-    "mysql:host=sql208.infinityfree.com;dbname=if0_41693683_moncoinvert;charset=utf8",
-    "if0_41693683",
-    "mi6fyKP9VKkR0"
-);
+$pdo = new PDO("mysql:host=localhost;dbname=moncoinvert;charset=utf8", "root", "");
 
 if ($_POST) {
 
@@ -16,11 +12,11 @@ if ($_POST) {
 
         setcookie("client_id", $client['idClient'], time() + 3600, "/");
 
-        // 🔥 stocker prénom + nom temporairement en cookie (option simple)
+        // stocker prénom + nom temporairement en cookie (option simple)
         setcookie("prenom", $client['Prenom'], time() + 3600, "/");
         setcookie("nom", $client['Nom'], time() + 3600, "/");
 
-        // 🔥 redirection vers accueil
+        // redirection vers accueil
         header("Location: index.php?page=accueil");
         exit;
 

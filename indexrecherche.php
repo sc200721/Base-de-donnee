@@ -6,8 +6,8 @@ try {
     die("Erreur de connexion");
 }
 
-if (isset($_GET['recherche'])) {
-    $q = $_GET['recherche'];
+if (isset($_GET['q'])) {
+    $q = $_GET['q'];
 
     $stmt = $pdo->prepare("SELECT Nom FROM produits WHERE Nom LIKE :search LIMIT 10");
     $stmt->execute([

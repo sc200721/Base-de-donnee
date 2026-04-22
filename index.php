@@ -16,7 +16,7 @@ $connecte = isset($_COOKIE['client_id']);
 switch ($page) {
     case 'accueil':
     default:
-        nav($categories);
+        nav($categories,$pageCategories);
         include("accueil.html");
         break;
 

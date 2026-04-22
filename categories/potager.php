@@ -8,7 +8,7 @@ try {
     die("Erreur de connexion à la base de données.");
 }
 
-$stmt = $pdo->prepare("SELECT * FROM produits WHERE categorie = :cat");
+$stmt = $pdo->prepare("SELECT * FROM produits WHERE idCategorie = :cat");
 $stmt->execute(['cat' => "Coin Potager"]);
 $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -23,8 +23,8 @@ $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="../indexRecherche.js"></script>
 </head>
 <body>
-    <?php include '../header.html'; ?>
-    <?php nav($categories); ?>
+    <?php include '../header.php'; ?>
+    <?php nav($categories,$pageCategories); ?>
 
     <section>
         <h2>Coin Potager</h2>

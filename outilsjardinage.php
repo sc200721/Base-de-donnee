@@ -29,6 +29,7 @@ nav($categories, $pageCategories);
         <div class="produit">
             <h3><?php echo $produit['Nom']; ?></h3>
             <p class="prix"> <?php echo $produit['Prix']; ?>€</p>
+            <button class="btn-decouvrir">Ajouter au panier</button>
           </div>
         <?php
         }

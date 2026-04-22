@@ -312,6 +312,7 @@ footer {
   font-size: 1rem;
   font-weight: bold;
   transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
 .btn-decouvrir:hover {

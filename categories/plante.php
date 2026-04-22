@@ -9,7 +9,7 @@ try {
 }
 
 // On récupère les produits liés à cette catégorie
-$stmt = $pdo->prepare("SELECT * FROM produits WHERE categorie = :cat");
+$stmt = $pdo->prepare("SELECT * FROM produits WHERE idCategorie = :cat");
 $stmt->execute(['cat' => "Plante d'intérieur"]);
 $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -25,10 +25,10 @@ $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <!-- On inclut l'en-tête existant -->
-    <?php include '../header.html'; ?>
+    <?php include '../header.php'; ?>
 
     <!-- On génère le menu de navigation -->
-    <?php nav($categories); ?>
+    <?php nav($categories,$pageCategories); ?>
 
     <section>
         <h2>Plantes d'intérieur</h2>

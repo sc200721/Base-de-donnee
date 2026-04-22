@@ -2,7 +2,7 @@
 require_once '../function.php';
 
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=moncoinvert.sql;charset=utf8", "root", "");
+    $pdo = new PDO("mysql:host=localhost;dbname=moncoinvert;charset=utf8", "root", "");
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (Exception $e) {
     die("Erreur de connexion à la base de données.");

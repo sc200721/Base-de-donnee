@@ -9,7 +9,7 @@ try {
 if (isset($_GET['q'])) {
     $q = $_GET['q'];
 
-    $stmt = $pdo->prepare("SELECT nom FROM produits WHERE nom LIKE :search LIMIT 10");
+    $stmt = $pdo->prepare("SELECT Nom FROM produit WHERE Nom LIKE :search LIMIT 10");
     $stmt->execute([
         'search' => "%$q%"
     ]);
@@ -19,7 +19,7 @@ if (isset($_GET['q'])) {
     $data = [];
 
     foreach ($resultats as $row) {
-        $data[] = $row['nom'];
+        $data[] = $row['Nom'];
     }
     //on converti notre tableau data en json plus simple pour le javascript
     echo json_encode($data);

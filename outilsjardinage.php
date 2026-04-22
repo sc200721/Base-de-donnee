@@ -8,13 +8,13 @@
 </head>
 <body>
 
-<?php include("header.html");
+<?php include("header.php");
 include("function.php");
 
 $page = $_GET['page'] ?? 'accueil';
 $connecte = isset($_COOKIE['client_id']);
 
-nav($categories);
+nav($categories, $pageCategories);
 ?>
 
 <section>

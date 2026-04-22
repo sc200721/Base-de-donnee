@@ -52,20 +52,19 @@ function nav($categories,$pageCategories){
     
     foreach ($categories as $cat => $sousCategories){
         echo "<li class='menu-deroulant'>";
-        echo "<a href='#'>$cat</a>";
-
+        echo "<a href='$pageCategories[$i]'>$cat</a>";
+        
         if (!empty($sousCategories)) {
             echo "<ul class='sous-menu'>";
-
+            
             foreach ($sousCategories as $sousCat) {
-                echo "<li><a href='$pageCategories[$i]'>$sousCat</a></li>";
-                $i++;
+                echo "<li><a href='#'>$sousCat</a></li>";
               }
         
               echo "</ul>";
         }
         echo "</li>";
-
+        $i++;
     }
     echo "</ul></nav>";
 }

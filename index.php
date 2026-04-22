@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<?php include("header.html");
+<?php include("header.php");
 include("function.php");
 
 $page = $_GET['page'] ?? 'accueil';
@@ -27,7 +27,7 @@ switch ($page) {
 
     case 'connexion':
         if ($connecte) {
-            include("compte.html");
+            include("compte.php");
         } else {
             include("connexion.html");
         }

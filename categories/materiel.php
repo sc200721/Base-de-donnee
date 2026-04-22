@@ -8,7 +8,7 @@ try {
     die("Erreur de connexion à la base de données.");
 }
 
-$stmt = $pdo->prepare("SELECT * FROM produits WHERE idCategorie = :cat");
+$stmt = $pdo->prepare("SELECT * FROM produit WHERE idCategorie = :cat");
 $stmt->execute(['cat' => "Matériel & Entretien"]);
 $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -24,7 +24,7 @@ $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <?php include '../header.php'; ?>
-    <?php nav($categories,$pageCategories); ?>
+    <?php nav($categories, $pageCategories); ?>
 
     <section>
         <h2>Matériel & Entretien</h2>

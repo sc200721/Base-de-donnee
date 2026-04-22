@@ -24,7 +24,7 @@ $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <?php include '../header.php'; ?>
-    <?php nav($categories,$pageCategories); ?>
+    <?php nav($categories, $pageCategories); ?>
 
     <section>
         <h2>Balcon, Terrasse et Jardin</h2>
@@ -53,4 +53,3 @@ $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </footer>
 </body>
 </html>
-

@@ -230,7 +230,7 @@ nav li > a:hover {
 }
 
 /* corps */
-section {
+.section-accueil {
   grid-column: 2/3;
   grid-row: 2/3;
   background-color: #dcdfda;

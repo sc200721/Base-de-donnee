@@ -1,6 +1,6 @@
 <header>
   <div id="grandconteneur">
-    <a href="index.php?page=accueil">
+    <a href="../index.php?page=accueil">
       <img
         class="logo"
         src="logo_a_mettre...."
@@ -16,7 +16,7 @@
           placeholder="Recherche"
         />
         <button class="resultat">
-          <img src="loupe.png" alt="Loupe" />
+          <img src="../loupe.png" alt="Loupe" />
         </button>
         <!-- faudra faire un melange de php + base de donnée pour la barre de
         recher en autocompletation ou sinon faire un script en js à voir -->
@@ -30,10 +30,10 @@
             <?= htmlspecialchars($_COOKIE['prenom'] . " " . $_COOKIE['nom']) ?>
           </span>
         <?php endif; ?>
-        <a href="index.php?page=connexion" class="compte">
+        <a href="../index.php?page=connexion" class="compte">
           <img src="logocompte.png" alt="Mon compte" id="logocompte" />
         </a>
-        <a href="index.php?page=panier" class="panier">
+        <a href="../index.php?page=panier" class="panier">
           <img src="logopanier.png" alt="Mon panier" id="logopanier" />
         </a>
       </div>

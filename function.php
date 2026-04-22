@@ -38,11 +38,11 @@ $categories=[
 ];
 
 $pageCategories = [
-    "./categories/plante.php",
-    "./categories/balcon.php",
-    "./categories/potager.php",
-    "./categories/materiel.php",
-    "./categories/conseils.php"
+    "../categories/plante.php",
+    "../categories/balcon.php",
+    "../categories/potager.php",
+    "../categories/materiel.php",
+    "../categories/conseils.php"
 ];
 
 /*génère le nav en fonction de la page sur laquel on est pour mettre en évidence le bouton*/

@@ -4,11 +4,7 @@ if (!isset($_COOKIE['client_id'])) {
     exit;
 }
 
-$pdo = new PDO(
-    "mysql:host=sql208.infinityfree.com;dbname=if0_41693683_moncoinvert;charset=utf8",
-    "if0_41693683",
-    "mi6fyKP9VKkR0"
-);
+$pdo = new PDO("mysql:host=localhost;dbname=moncoinvert;charset=utf8", "root", "");
 
 $stmt = $pdo->prepare("SELECT * FROM client WHERE idClient = ?");
 $stmt->execute([$_COOKIE['client_id']]);

@@ -46,9 +46,10 @@ $pageCategories = [
 ];
 
 /*génère le nav en fonction de la page sur laquel on est pour mettre en évidence le bouton*/
-function nav($categories){
+function nav($categories,$pageCategories){
     echo "<nav><ul>";
-
+    $i=0
+    
     foreach ($categories as $cat => $sousCategories){
         echo "<li class='menu-deroulant'>";
         echo "<a href='#'>$cat</a>";
@@ -57,7 +58,8 @@ function nav($categories){
             echo "<ul class='sous-menu'>";
 
             foreach ($sousCategories as $sousCat) {
-                echo "<li><a href='#'>$sousCat</a></li>";
+                echo "<li><a href='$pageCategories[$i]'>$sousCat</a></li>";
+                $i++;
               }
         
               echo "</ul>";

@@ -6,10 +6,10 @@ try {
     die("Erreur de connexion");
 }
 
-if (isset($_GET['q'])) {
-    $q = $_GET['q'];
+if (isset($_GET['recherche'])) {
+    $q = $_GET['recherche'];
 
-    $stmt = $pdo->prepare("SELECT nom FROM produits WHERE nom LIKE :search LIMIT 10");
+    $stmt = $pdo->prepare("SELECT Nom FROM produits WHERE Nom LIKE :search LIMIT 10");
     $stmt->execute([
         'search' => "%$q%"
     ]);

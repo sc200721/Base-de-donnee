@@ -1,0 +1,50 @@
+<section class="section-compte"> 
+  <h1>Créer un compte</h1>
+
+  <form action="inscription.php" method="POST" class="form-compte">
+
+    <label>Nom* :</label>
+    <input type="text" name="Nom" required 
+           pattern="^[A-Za-zÀ-ÿ\- ]{2,50}$"
+           title="Le nom doit contenir uniquement des lettres (2 à 50 caractères)">
+
+    <label>Prénom* :</label>
+    <input type="text" name="Prenom" required 
+           pattern="^[A-Za-zÀ-ÿ\- ]{2,50}$"
+           title="Le prénom doit contenir uniquement des lettres (2 à 50 caractères)">
+
+    <label>Date de naissance* :</label>
+    <input type="date" name="DateNaissance" required>
+
+    <label>Adresse de livraison* :</label>
+    <input type="text" name="Adresse" required 
+           pattern="^[A-Za-z0-9À-ÿ\s,'\-]{5,100}$"
+           title="Adresse invalide">
+
+    <label>Code postal* :</label>
+    <input type="text" name="CodePostal" required 
+           pattern="^[0-9]{5}$"
+           title="Le code postal doit contenir 5 chiffres">
+
+    <label>Ville* :</label>
+    <input type="text" name="Ville" required 
+           pattern="^[A-Za-zÀ-ÿ\- ]{2,50}$"
+           title="Ville invalide">
+
+    <label>Email* :</label>
+    <input type="email" name="AdresseMail" required>
+
+    <label>Mot de passe* :</label>
+    <input type="password" name="MotDePasse" required 
+           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$"
+           title="Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule et un chiffre">
+
+    <label>Téléphone :</label>
+    <input type="tel" name="Telephone"
+           pattern="^(\+33|0)[1-9](\d{2}){4}$"
+           title="Numéro français valide (ex: 0612345678 ou +33612345678)">
+
+    <button type="submit">S'inscrire</button>
+    <h4>*Vous devez obligatoirement renseigner ces champs.</h4>
+  </form>
+</section>

@@ -69,4 +69,13 @@ function nav($categories,$pageCategories){
     echo "</ul></nav>";
 }
 
+function produits($type){
+    $pdo = new PDO("mysql:host=localhost;dbname=moncoinvert;charset=utf8","root", "");
+    //Il faudra changer par le votre  
+    $stmt = $pdo->prepare("SELECT p.Nom, PrixVenteUnitaire as 'Prix' from produit p inner join categorie c on p.idCategorie = c.idCategorie where c.Nom = ?");
+    $stmt->execute([$type]);
+    $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);;
+    return $produits;
+}
+
 ?>

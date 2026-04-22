@@ -8,15 +8,19 @@
 </head>
 <body>
 
-<?php include("header.html"); ?>
+<?php include("header.html");
+include("function.php");
 
-<?php
 $page = $_GET['page'] ?? 'accueil';
 $connecte = isset($_COOKIE['client_id']);
+
+
+
 
 switch ($page) {
     case 'accueil':
     default:
+        nav($categories);
         include("accueil.html");
         break;
 
@@ -24,7 +28,7 @@ switch ($page) {
         include("inscription.html");
         break;
 
-   case 'connexion':
+    case 'connexion':
         if ($connecte) {
             include("compte.html");
         } else {
@@ -36,9 +40,8 @@ switch ($page) {
         include("panier.html");
         break;
 }
-?>
 
-<?php include("footer.html"); ?>
+include("footer.html"); ?>
 
 </body>
 </html>

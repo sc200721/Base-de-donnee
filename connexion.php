@@ -16,11 +16,11 @@ if ($_POST) {
 
         setcookie("client_id", $client['idClient'], time() + 3600, "/");
 
-        // 🔥 stocker prénom + nom temporairement en cookie (option simple)
+        // stocker prénom + nom temporairement en cookie (option simple)
         setcookie("prenom", $client['Prenom'], time() + 3600, "/");
         setcookie("nom", $client['Nom'], time() + 3600, "/");
 
-        // 🔥 redirection vers accueil
+        // redirection vers accueil
         header("Location: index.php?page=accueil");
         exit;
 

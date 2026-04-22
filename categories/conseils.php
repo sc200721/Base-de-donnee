@@ -12,7 +12,7 @@ require_once '../function.php';
     <script src="../indexRecherche.js"></script>
 </head>
 <body>
-    <?php include '../header.html'; ?>
+    <?php include '../header.php'; ?>
     <?php nav($categories,$pageCategories); ?>
 
     <section>

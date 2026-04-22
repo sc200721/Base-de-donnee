@@ -19,7 +19,7 @@ if (isset($_GET['q'])) {
     $data = [];
 
     foreach ($resultats as $row) {
-        $data[] = $row['nom'];
+        $data[] = $row['Nom'];
     }
     //on converti notre tableau data en json plus simple pour le javascript
     echo json_encode($data);

@@ -48,7 +48,7 @@ $pageCategories = [
 /*génère le nav en fonction de la page sur laquel on est pour mettre en évidence le bouton*/
 function nav($categories,$pageCategories){
     echo "<nav><ul>";
-    $i=0
+    $i=0;
     
     foreach ($categories as $cat => $sousCategories){
         echo "<li class='menu-deroulant'>";
